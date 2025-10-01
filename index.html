@@ -305,6 +305,22 @@
             margin-top: 10px;
         }
 
+        .form-input {
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-section {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+
         @media (max-width: 768px) {
             .grid {
                 grid-template-columns: 1fr;
@@ -327,7 +343,7 @@
             <!-- Funding acknowledgment section -->
             <div class="funding-section">
                 <!-- ERC Logo - Use your actual image file -->
-                <img src="erc-1.png" alt="ERC Logo" style="height: 80px;">
+                <img src="erc_logo.png" alt="ERC Logo" style="height: 80px;">
                 
                 <div class="funding-text">
                     <div style="font-size: 0.9rem; margin-bottom: 5px;">Funded by the European Union</div>
@@ -336,7 +352,7 @@
                 </div>
                 
                 <!-- EU Flag - Use your actual image file -->
-                <img src="eu-1.png" alt="EU Flag" style="height: 80px;">
+                <img src="eu_flag.png" alt="EU Flag" style="height: 80px;">
             </div>
             
             <div id="connection-status" class="status status-disconnected">
@@ -366,40 +382,6 @@
                 <button class="btn btn-secondary" onclick="selectAllPairs()">Select All</button>
                 <button class="btn btn-secondary" onclick="clearPairs()">Clear All</button>
             </div>
-<!-- Add this new card to your grid in index.html -->
-            <div class="card">
-                <h2>Language Management</h2>
-                <button class="btn btn-secondary" onclick="showAddLanguageForm()">Add New Language Pair</button>
-                <button class="btn btn-secondary" onclick="showUploadDataForm()">Upload Language Data</button>
-                
-                <!-- Add Language Form (initially hidden) -->
-                <div id="add-language-form" style="display: none; margin-top: 20px; border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
-                    <h3>Add New Language Pair</h3>
-                    <input type="text" id="pair-name" placeholder="Pair Name (e.g., Akkadian → Arabic)" style="width: 100%; margin: 5px 0; padding: 8px;">
-                    <input type="text" id="ancient-lang" placeholder="Ancient Language" style="width: 100%; margin: 5px 0; padding: 8px;">
-                    <input type="text" id="modern-lang" placeholder="Modern Language" style="width: 100%; margin: 5px 0; padding: 8px;">
-                    <input type="number" id="years-depth" placeholder="Years (e.g., 2000)" style="width: 100%; margin: 5px 0; padding: 8px;">
-                    <input type="text" id="family-name" placeholder="Language Family" style="width: 100%; margin: 5px 0; padding: 8px;">
-                    <button class="btn" onclick="addLanguagePair()">Add Pair</button>
-                    <button class="btn btn-secondary" onclick="hideAddLanguageForm()">Cancel</button>
-                </div>
-                
-                <!-- Upload Data Form (initially hidden) -->
-                <div id="upload-data-form" style="display: none; margin-top: 20px; border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
-                    <h3>Upload Language Data</h3>
-                    <select id="upload-language" style="width: 100%; margin: 5px 0; padding: 8px;">
-                        <option value="">Select Language</option>
-                    </select>
-                    <select id="data-type" style="width: 100%; margin: 5px 0; padding: 8px;">
-                        <option value="swadesh">Swadesh List</option>
-                        <option value="asjp">ASJP Phonetic Data</option>
-                        <option value="treebank">Universal Dependencies Treebank</option>
-                    </select>
-                    <input type="file" id="data-file" style="width: 100%; margin: 5px 0; padding: 8px;">
-                    <button class="btn" onclick="uploadLanguageData()">Upload</button>
-                    <button class="btn btn-secondary" onclick="hideUploadDataForm()">Cancel</button>
-                </div>
-            </div>
 
             <!-- Controls -->
             <div class="card">
@@ -420,6 +402,41 @@
                 <button class="btn btn-secondary" onclick="debugFiles()">
                     Debug Files
                 </button>
+            </div>
+
+            <!-- Language Management -->
+            <div class="card">
+                <h2>Language Management</h2>
+                <button class="btn btn-secondary" onclick="showAddLanguageForm()">Add New Language Pair</button>
+                <button class="btn btn-secondary" onclick="showUploadDataForm()">Upload Language Data</button>
+                
+                <!-- Add Language Form -->
+                <div id="add-language-form" class="form-section" style="display: none;">
+                    <h3>Add New Language Pair</h3>
+                    <input type="text" id="pair-name" placeholder="Pair Name (e.g., Akkadian → Arabic)" class="form-input">
+                    <input type="text" id="ancient-lang" placeholder="Ancient Language" class="form-input">
+                    <input type="text" id="modern-lang" placeholder="Modern Language" class="form-input">
+                    <input type="number" id="years-depth" placeholder="Years (e.g., 2000)" class="form-input">
+                    <input type="text" id="family-name" placeholder="Language Family" class="form-input">
+                    <button class="btn" onclick="addLanguagePair()">Add Pair</button>
+                    <button class="btn btn-secondary" onclick="hideAddLanguageForm()">Cancel</button>
+                </div>
+                
+                <!-- Upload Data Form -->
+                <div id="upload-data-form" class="form-section" style="display: none;">
+                    <h3>Upload Language Data</h3>
+                    <select id="upload-language" class="form-input">
+                        <option value="">Select Language</option>
+                    </select>
+                    <select id="data-type" class="form-input">
+                        <option value="swadesh">Swadesh List</option>
+                        <option value="asjp">ASJP Phonetic Data</option>
+                        <option value="treebank">Universal Dependencies Treebank</option>
+                    </select>
+                    <input type="file" id="data-file" class="form-input">
+                    <button class="btn" onclick="uploadLanguageData()">Upload</button>
+                    <button class="btn btn-secondary" onclick="hideUploadDataForm()">Cancel</button>
+                </div>
             </div>
 
             <!-- Status -->
@@ -454,7 +471,6 @@
         </div>
     </div>
 
-
     <script>
         const API_BASE = `${window.location.origin}/api`;
         
@@ -469,15 +485,15 @@
         // Default data - loads immediately
         const DEFAULT_DIMENSIONS = [
             {id: "lexical", name: "Lexical Distance", description: "Core vocabulary change (Swadesh lists)"},
-            {id: "wals", name: "WALS Typological", description: "Discrete structural features"},
-            {id: "grambank", name: "Grambank Typological", description: "Binary grammatical features"},
-            {id: "uriel", name: "URIEL Featural", description: "Dense vector embeddings"},
-            {id: "syntactic", name: "Syntactic Distance", description: "Enhanced UD treebank analysis"},
-            {id: "phonological", name: "Phonological Distance", description: "Sound change patterns (ASJP)"},
-            {id: "cognate", name: "Cognate Distance", description: "Historical relatedness (CLDF)"}
+            {id: "wals", name: "WALS Typological", description: "Discrete categorical features (word order, case systems, etc.)"},
+            {id: "grambank", name: "Grambank Typological", description: "Binary yes/no grammatical properties (195 features)"},
+            {id: "uriel", name: "URIEL Featural", description: "Dense vector embeddings from multiple databases"},
+            {id: "syntactic", name: "Syntactic Distance", description: "Universal Dependencies treebank analysis"},
+            {id: "phonological", name: "Phonological Distance", description: "Sound change patterns (ASJP transcriptions)"},
+            {id: "cognate", name: "Cognate Distance", description: "Historical relatedness (expert cognate judgments)"}
         ];
 
-        const DEFAULT_LANGUAGE_PAIRS = [
+        let DEFAULT_LANGUAGE_PAIRS = [
             "Ancient Greek → Modern Greek",
             "Latin → Italian",
             "Latin → Spanish", 
@@ -768,8 +784,7 @@
             }
         }
 
-        // Display results
-// Display results - FIXED to handle backend data correctly
+        // Display results - FIXED to handle backend data correctly
         function displayResults() {
             if (!analysisResults) return;
             
@@ -843,114 +858,6 @@
                 showAlert('No results to visualize', 'error');
                 return;
             }
-        // Add these functions to your JavaScript section in index.html
-
-        function showAddLanguageForm() {
-            document.getElementById('add-language-form').style.display = 'block';
-        }
-
-        function hideAddLanguageForm() {
-            document.getElementById('add-language-form').style.display = 'none';
-        }
-
-        function showUploadDataForm() {
-            // Populate language dropdown with existing languages
-            populateLanguageDropdown();
-            document.getElementById('upload-data-form').style.display = 'block';
-        }
-
-        function hideUploadDataForm() {
-            document.getElementById('upload-data-form').style.display = 'none';
-        }
-
-        function populateLanguageDropdown() {
-            const select = document.getElementById('upload-language');
-            select.innerHTML = '<option value="">Select Language</option>';
-            
-            // Add all unique languages from existing pairs
-            const languages = new Set();
-            DEFAULT_LANGUAGE_PAIRS.forEach(pair => {
-                const [ancient, modern] = pair.split(' → ');
-                languages.add(ancient);
-                languages.add(modern);
-            });
-            
-            Array.from(languages).sort().forEach(lang => {
-                const option = document.createElement('option');
-                option.value = lang;
-                option.textContent = lang;
-                select.appendChild(option);
-            });
-        }
-
-        async function addLanguagePair() {
-            const pairName = document.getElementById('pair-name').value;
-            const ancient = document.getElementById('ancient-lang').value;
-            const modern = document.getElementById('modern-lang').value;
-            const years = document.getElementById('years-depth').value;
-            const family = document.getElementById('family-name').value;
-            
-            if (!pairName || !ancient || !modern || !years || !family) {
-                showAlert('Please fill in all fields', 'error');
-                return;
-            }
-            
-            try {
-                const response = await apiCall('/language-pairs', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        pair_name: pairName,
-                        ancient: ancient,
-                        modern: modern,
-                        years: parseInt(years),
-                        family: family
-                    })
-                });
-                
-                showAlert(`Added language pair: ${pairName}`, 'success');
-                hideAddLanguageForm();
-                
-                // Refresh language pairs display
-                loadLanguagePairs();
-                
-            } catch (error) {
-                showAlert(`Failed to add language pair: ${error.message}`, 'error');
-            }
-        }
-
-        async function uploadLanguageData() {
-            const language = document.getElementById('upload-language').value;
-            const dataType = document.getElementById('data-type').value;
-            const fileInput = document.getElementById('data-file');
-            
-            if (!language || !dataType || !fileInput.files[0]) {
-                showAlert('Please select language, data type, and file', 'error');
-                return;
-            }
-            
-            const formData = new FormData();
-            formData.append('file', fileInput.files[0]);
-            formData.append('type', dataType);
-            
-            try {
-                const response = await fetch(`${API_BASE}/upload-language-data/${language}`, {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const result = await response.json();
-                
-                if (result.status === 'success') {
-                    showAlert(`Uploaded ${dataType} data for ${language}`, 'success');
-                    hideUploadDataForm();
-                } else {
-                    throw new Error(result.message);
-                }
-                
-            } catch (error) {
-                showAlert(`Failed to upload data: ${error.message}`, 'error');
-            }
-        }
             
             const btn = document.getElementById('visualize-btn');
             btn.disabled = true;
@@ -1037,6 +944,144 @@
                 alert(debugInfo);
             } catch (error) {
                 showAlert(`Debug failed: ${error.message}`, 'error');
+            }
+        }
+
+        // Language Management Functions
+        function showAddLanguageForm() {
+            document.getElementById('add-language-form').style.display = 'block';
+        }
+
+        function hideAddLanguageForm() {
+            document.getElementById('add-language-form').style.display = 'none';
+        }
+
+        function showUploadDataForm() {
+            populateLanguageDropdown();
+            document.getElementById('upload-data-form').style.display = 'block';
+        }
+
+        function hideUploadDataForm() {
+            document.getElementById('upload-data-form').style.display = 'none';
+        }
+
+        function populateLanguageDropdown() {
+            const select = document.getElementById('upload-language');
+            select.innerHTML = '<option value="">Select Language</option>';
+            
+            const languages = new Set();
+            DEFAULT_LANGUAGE_PAIRS.forEach(pair => {
+                const [ancient, modern] = pair.split(' → ');
+                languages.add(ancient);
+                languages.add(modern);
+            });
+            
+            Array.from(languages).sort().forEach(lang => {
+                const option = document.createElement('option');
+                option.value = lang;
+                option.textContent = lang;
+                select.appendChild(option);
+            });
+        }
+
+        async function addLanguagePair() {
+            console.log("Add language pair function called");
+            
+            const pairName = document.getElementById('pair-name').value.trim();
+            const ancient = document.getElementById('ancient-lang').value.trim();
+            const modern = document.getElementById('modern-lang').value.trim();
+            const years = document.getElementById('years-depth').value.trim();
+            const family = document.getElementById('family-name').value.trim();
+            
+            console.log("Form values:", {pairName, ancient, modern, years, family});
+            
+            if (!pairName || !ancient || !modern || !years || !family) {
+                showAlert('Please fill in all fields', 'error');
+                return;
+            }
+            
+            try {
+                console.log("Sending request to add language pair");
+                
+                const response = await fetch(`${API_BASE}/language-pairs`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        pair_name: pairName,
+                        ancient: ancient,
+                        modern: modern,
+                        years: parseInt(years),
+                        family: family
+                    })
+                });
+                
+                console.log("Response status:", response.status);
+                
+                const result = await response.json();
+                console.log("Response data:", result);
+                
+                if (result.status === 'success') {
+                    showAlert(`Added language pair: ${pairName}`, 'success');
+                    hideAddLanguageForm();
+                    
+                    // Clear form
+                    document.getElementById('pair-name').value = '';
+                    document.getElementById('ancient-lang').value = '';
+                    document.getElementById('modern-lang').value = '';
+                    document.getElementById('years-depth').value = '';
+                    document.getElementById('family-name').value = '';
+                    
+                    // Add to DEFAULT_LANGUAGE_PAIRS and refresh
+                    DEFAULT_LANGUAGE_PAIRS.push(pairName);
+                    loadLanguagePairs();
+                } else {
+                    throw new Error(result.message);
+                }
+                
+            } catch (error) {
+                console.error("Error adding language pair:", error);
+                showAlert(`Failed to add language pair: ${error.message}`, 'error');
+            }
+        }
+
+        async function uploadLanguageData() {
+            const language = document.getElementById('upload-language').value;
+            const dataType = document.getElementById('data-type').value;
+            const fileInput = document.getElementById('data-file');
+            
+            if (!language || !dataType || !fileInput.files[0]) {
+                showAlert('Please select language, data type, and file', 'error');
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+            formData.append('type', dataType);
+            
+            try {
+                const response = await fetch(`${API_BASE}/upload-language-data/${language}`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    showAlert(`Uploaded ${dataType} data for ${language}`, 'success');
+                    hideUploadDataForm();
+                    
+                    // Clear form
+                    document.getElementById('upload-language').value = '';
+                    document.getElementById('data-type').value = 'swadesh';
+                    document.getElementById('data-file').value = '';
+                } else {
+                    throw new Error(result.message);
+                }
+                
+            } catch (error) {
+                showAlert(`Failed to upload data: ${error.message}`, 'error');
             }
         }
     </script>
