@@ -1482,6 +1482,7 @@ def run_analysis():
         return jsonify({"status": "error", "message": "Analyzer not initialized"}), 400
     
     try:
+        import gc
         data = request.get_json()
         selected_dimensions = data.get('dimensions', [])
         language_pairs = data.get('pairs', list(global_analyzer.historical_pairs.keys()))
@@ -1492,10 +1493,12 @@ def run_analysis():
         if 'lexical' in selected_dimensions:
             print("Calculating lexical distances...")
             results['lexical'] = global_analyzer.calculate_lexical_distances()
+            gc.collect()
         
         if 'wals' in selected_dimensions:
             print("Calculating WALS typological distances...")
             results['wals'] = global_analyzer.calculate_typological_distances("sane_wals.xlsx")
+            gc.collect()
         
         if 'grambank' in selected_dimensions:
             print("Calculating Grambank distances...")
@@ -1503,20 +1506,24 @@ def run_analysis():
                 results['grambank'] = global_analyzer.grambank_analyzer.calculate_grambank_distances(global_analyzer.historical_pairs)
             else:
                 results['grambank'] = {}
+            gc.collect()
         
         if 'uriel' in selected_dimensions and URIEL_AVAILABLE:
             print("Calculating URIEL distances...")
             results['uriel'] = global_analyzer.uriel_analyzer.calculate_uriel_distances(global_analyzer.historical_pairs)
+            gc.collect()
         else:
             results['uriel'] = {}
         
         if 'syntactic' in selected_dimensions:
             print("Calculating syntactic distances...")
             results['syntactic'] = global_analyzer.calculate_improved_syntactic_distances()
+            gc.collect()
         
         if 'phonological' in selected_dimensions:
             print("Calculating phonological distances...")
             results['phonological'] = global_analyzer.phonological_analyzer.calculate_phonological_distances(global_analyzer.historical_pairs)
+            gc.collect()
         
         if 'cognate' in selected_dimensions and global_analyzer.cognate_analyzer:
             print("Calculating cognate distances...")
@@ -1524,6 +1531,7 @@ def run_analysis():
                 results['cognate'] = global_analyzer.cognate_analyzer.calculate_cognate_distances(global_analyzer.historical_pairs)
             else:
                 results['cognate'] = {}
+            gc.collect()
         else:
             results['cognate'] = {}
         
@@ -1539,6 +1547,7 @@ def run_analysis():
                 results.get('cognate', {})
             )
             results['combined'] = combined_results
+            gc.collect()
         
         return jsonify({
             "status": "success",
