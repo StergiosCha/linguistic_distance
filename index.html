@@ -39,6 +39,21 @@
             margin-bottom: 10px;
         }
 
+        .funding-section {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .funding-text {
+            text-align: center;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -297,6 +312,9 @@
             .container {
                 padding: 10px;
             }
+            .funding-section {
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -305,6 +323,22 @@
         <div class="header">
             <h1>Seven-Dimensional Linguistic Analysis</h1>
             <p>Comprehensive framework for analyzing historical language change across multiple linguistic dimensions</p>
+            
+            <!-- Funding acknowledgment section -->
+            <div class="funding-section">
+                <!-- ERC Logo - Use your actual image file -->
+                <img src="erc-1.png" alt="ERC Logo" style="height: 80px;">
+                
+                <div class="funding-text">
+                    <div style="font-size: 0.9rem; margin-bottom: 5px;">Funded by the European Union</div>
+                    <div style="font-size: 0.8rem; color: #666;">(ERC ADG, PhylProGramm, 101096554)</div>
+                    <div style="font-size: 0.8rem; color: #666; margin-top: 5px;">Created by Stergios Chatzikyriakidis</div>
+                </div>
+                
+                <!-- EU Flag - Use your actual image file -->
+                <img src="eu-1.png" alt="EU Flag" style="height: 80px;">
+            </div>
+            
             <div id="connection-status" class="status status-disconnected">
                 Checking backend connection...
             </div>
@@ -385,6 +419,7 @@
             </div>
         </div>
     </div>
+
 
     <script>
         const API_BASE = 'http://localhost:5001/api';
