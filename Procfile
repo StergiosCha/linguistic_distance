@@ -1,1 +1,1 @@
-echo "web: gunicorn --bind 0.0.0.0:\$PORT --timeout 300 --workers 1 main:app" > Procfile
+web: gunicorn --bind 0.0.0.0:\$PORT --timeout 300 --workers 1 main:app
