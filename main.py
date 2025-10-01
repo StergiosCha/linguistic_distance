@@ -1549,6 +1549,10 @@ def run_analysis():
     except Exception as e:
         print(f"Analysis error: {traceback.format_exc()}")
         return jsonify({"status": "error", "message": str(e)}), 500
+@app.route('/')
+def index():
+    """Serve the frontend HTML"""
+    return send_file('index.html')
 
 @app.route('/api/visualize', methods=['POST'])
 def create_visualizations():
