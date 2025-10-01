@@ -1199,29 +1199,45 @@ class EnhancedSevenDimensionalTreebankAnalyzer:
             print(f"  ✗ Error parsing {direct_path}: {e}")
             return None
 
-    def calculate_improved_syntactic_distances(self):
-        """Calculate syntactic distances"""
+    def calculate_improved_syntactic_distances(self, selected_pairs=None):
+        """Calculate syntactic distances for selected pairs"""
         
         treebank_features = {}
+        pairs_to_process = selected_pairs or self.historical_pairs.keys()
         
         print("\nEXTRACTING SYNTACTIC FEATURES")
         print("=" * 60)
         
-        for language, filename in self.treebank_files.items():
-            sentences = self.parse_conllu_file(filename)
-            if sentences:
-                features = self.syntactic_analyzer.extract_universal_syntactic_features(sentences, language)
-                treebank_features[language] = features
-                print(f"✓ {language}: Features extracted")
-            else:
-                print(f"✗ {language}: Failed to extract features")
+        # Only extract features for languages that appear in selected pairs
+        languages_needed = set()
+        for pair_name in pairs_to_process:
+            if pair_name in self.historical_pairs:
+                ancient, modern, years, family = self.historical_pairs[pair_name]
+                languages_needed.add(ancient)
+                languages_needed.add(modern)
+        
+        for language in languages_needed:
+            if language in self.treebank_files:
+                filename = self.treebank_files[language]
+                sentences = self.parse_conllu_file(filename)
+                if sentences:
+                    features = self.syntactic_analyzer.extract_universal_syntactic_features(sentences, language)
+                    treebank_features[language] = features
+                    print(f"✓ {language}: Features extracted")
+                else:
+                    print(f"✗ {language}: Failed to extract features")
         
         syntactic_results = {}
         
         print(f"\nCALCULATING SYNTACTIC DISTANCES")
         print("=" * 60)
         
-        for pair_name, (ancient, modern, years, family) in self.historical_pairs.items():
+        for pair_name in pairs_to_process:
+            if pair_name not in self.historical_pairs:
+                continue
+                
+            ancient, modern, years, family = self.historical_pairs[pair_name]
+            
             if ancient not in treebank_features or modern not in treebank_features:
                 print(f"✗ {pair_name}: Missing treebank data")
                 continue
@@ -1676,6 +1692,9 @@ def manage_language_pairs():
     """Get or add language pairs"""
     global global_analyzer
     
+    if not global_analyzer:
+        return jsonify({"status": "error", "message": "Analyzer not initialized"}), 400
+    
     if request.method == 'GET':
         return jsonify({
             "status": "success",
@@ -1684,23 +1703,26 @@ def manage_language_pairs():
         })
     
     elif request.method == 'POST':
-        data = request.get_json()
-        pair_name = data.get('pair_name')
-        ancient = data.get('ancient')
-        modern = data.get('modern')
-        years = data.get('years')
-        family = data.get('family')
-        
-        if not all([pair_name, ancient, modern, years, family]):
-            return jsonify({"status": "error", "message": "Missing required fields"}), 400
-        
-        global_analyzer.historical_pairs[pair_name] = (ancient, modern, int(years), family)
-        
-        return jsonify({
-            "status": "success", 
-            "message": f"Added language pair: {pair_name}",
-            "total_pairs": len(global_analyzer.historical_pairs)
-        })
+        try:
+            data = request.get_json()
+            pair_name = data.get('pair_name')
+            ancient = data.get('ancient')
+            modern = data.get('modern')
+            years = data.get('years')
+            family = data.get('family')
+            
+            if not all([pair_name, ancient, modern, years, family]):
+                return jsonify({"status": "error", "message": "Missing required fields"}), 400
+            
+            global_analyzer.historical_pairs[pair_name] = (ancient, modern, int(years), family)
+            
+            return jsonify({
+                "status": "success", 
+                "message": f"Added language pair: {pair_name}",
+                "total_pairs": len(global_analyzer.historical_pairs)
+            })
+        except Exception as e:
+            return jsonify({"status": "error", "message": str(e)}), 500
 
 @app.route('/api/upload-language-data/<language_name>', methods=['POST'])
 def upload_language_data(language_name):
