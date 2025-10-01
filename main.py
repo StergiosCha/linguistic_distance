@@ -157,29 +157,34 @@ class CLDFCognateAnalyzer:
         
         return distance
     
-    def calculate_cognate_distances(self, historical_pairs):
-        """Calculate cognate distances for all language pairs"""
-        if not self.lp_map:
-            print("✗ CLDF data not loaded")
-            return {}
-        
-        cognate_results = {}
-        
-        print("\nCALCULATING COGNATE DISTANCES (CLDF)")
-        print("=" * 50)
-        
-        for pair_name, (ancient, modern, years, family) in historical_pairs.items():
-            print(f"Processing {pair_name}...")
+    def calculate_cognate_distances(self, historical_pairs, selected_pairs=None):
+            """Calculate cognate distances for selected language pairs"""
+            if not self.lp_map:
+                print("✗ CLDF data not loaded")
+                return {}
             
-            distance = self.calculate_cognate_distance(ancient, modern)
+            cognate_results = {}
+            pairs_to_process = selected_pairs or historical_pairs.keys()
             
-            if distance is not None:
-                cognate_results[pair_name] = distance
-                print(f"✓ {pair_name}: {distance:.4f}")
-            else:
-                print(f"✗ {pair_name}: CLDF cognate data not available")
-        
-        return cognate_results
+            print("\nCALCULATING COGNATE DISTANCES (CLDF)")
+            print("=" * 50)
+            
+            for pair_name in pairs_to_process:
+                if pair_name not in historical_pairs:
+                    continue
+                    
+                ancient, modern, years, family = historical_pairs[pair_name]
+                print(f"Processing {pair_name}...")
+                
+                distance = self.calculate_cognate_distance(ancient, modern)
+                
+                if distance is not None:
+                    cognate_results[pair_name] = distance
+                    print(f"✓ {pair_name}: {distance:.4f}")
+                else:
+                    print(f"✗ {pair_name}: CLDF cognate data not available")
+            
+            return cognate_results
 
 class GrambankTypologicalAnalyzer:
     def __init__(self):
@@ -1628,14 +1633,15 @@ def create_visualizations():
         return jsonify({"status": "error", "message": str(e)}), 500
 
 # Add this route to serve static files
-@app.route('/<path:filename>')
+@app.route('/<filename>')
 def serve_static(filename):
     """Serve static files like images"""
     if filename.endswith(('.png', '.jpg', '.jpeg', '.gif', '.ico')):
-        return send_file(filename)
+        try:
+            return send_file(filename)
+        except FileNotFoundError:
+            return "File not found", 404
     return "File not found", 404
-
-
 @app.route('/api/export', methods=['POST'])
 def export_results():
     """Export analysis results to CSV"""
