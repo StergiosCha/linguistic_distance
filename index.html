@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven-Dimensional Linguistic Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .dimension {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dimension:hover {
+            border-color: #3498db;
+            background: #f8f9fa;
+        }
+
+        .dimension.selected {
+            border-color: #3498db;
+            background: #e3f2fd;
+        }
+
+        .dimension h3 {
+            color: #2c3e50;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .dimension p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .language-pairs {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .language-pair {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+
+        .language-pair:hover {
+            background: #f8f9fa;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        .btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+
+        .btn-success {
+            background: #27ae60;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .results {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            display: none;
+        }
+
+        .results.show {
+            display: block;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .results-table th,
+        .results-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .results-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .results-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .status {
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .status-connected {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-disconnected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .progress-container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .progress-container.show {
+            display: block;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .log-container {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Seven-Dimensional Linguistic Analysis</h1>
+            <p>Comprehensive framework for analyzing historical language change across multiple linguistic dimensions</p>
+            <div id="connection-status" class="status status-disconnected">
+                Checking backend connection...
+            </div>
+        </div>
+
+        <div id="alerts"></div>
+
+        <div class="grid">
+            <!-- Dimensions Selection -->
+            <div class="card">
+                <h2>Analysis Dimensions</h2>
+                <div id="dimensions-container">
+                    <!-- Dimensions loaded here -->
+                </div>
+                <button class="btn btn-secondary" onclick="selectAllDimensions()">Select All</button>
+                <button class="btn btn-secondary" onclick="clearDimensions()">Clear All</button>
+            </div>
+
+            <!-- Language Pairs -->
+            <div class="card">
+                <h2>Language Pairs</h2>
+                <div id="language-pairs-container" class="language-pairs">
+                    <!-- Language pairs loaded here -->
+                </div>
+                <button class="btn btn-secondary" onclick="selectAllPairs()">Select All</button>
+                <button class="btn btn-secondary" onclick="clearPairs()">Clear All</button>
+            </div>
+
+            <!-- Controls -->
+            <div class="card">
+                <h2>Analysis Controls</h2>
+                <button class="btn" onclick="initializeAnalyzer()" id="init-btn">
+                    Initialize Analyzer
+                </button>
+                <button class="btn" onclick="runAnalysis()" id="analyze-btn" disabled>
+                    Run Analysis
+                </button>
+                <button class="btn btn-success" onclick="createVisualization()" id="visualize-btn" disabled>
+                    Create Visualization
+                </button>
+                <br>
+                <button class="btn btn-secondary" onclick="exportResults('csv')" id="export-btn" disabled>
+                    Export Results
+                </button>
+                <button class="btn btn-secondary" onclick="debugFiles()">
+                    Debug Files
+                </button>
+            </div>
+
+            <!-- Status -->
+            <div class="card">
+                <h2>System Status</h2>
+                <div id="status-info">
+                    <p><strong>Selected Dimensions:</strong> <span id="selected-dims">0</span></p>
+                    <p><strong>Selected Language Pairs:</strong> <span id="selected-pairs">0</span></p>
+                    <p><strong>Analysis Status:</strong> <span id="analysis-status">Not started</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Section -->
+        <div id="progress-section" class="progress-container">
+            <h2>Analysis Progress</h2>
+            <div id="progress-text">Initializing...</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="log-container" id="log-container">
+                <div id="analysis-log">Starting analysis...</div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section" class="results">
+            <h2>Analysis Results</h2>
+            <div id="results-content">
+                <!-- Results loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5001/api';
+        
+        // State
+        let isInitialized = false;
+        let selectedDimensions = [];
+        let selectedPairs = [];
+        let analysisResults = null;
+        let backendConnected = false;
+        let currentAnalysisId = null;
+
+        // Default data - loads immediately
+        const DEFAULT_DIMENSIONS = [
+            {id: "lexical", name: "Lexical Distance", description: "Core vocabulary change (Swadesh lists)"},
+            {id: "wals", name: "WALS Typological", description: "Discrete structural features"},
+            {id: "grambank", name: "Grambank Typological", description: "Binary grammatical features"},
+            {id: "uriel", name: "URIEL Featural", description: "Dense vector embeddings"},
+            {id: "syntactic", name: "Syntactic Distance", description: "Enhanced UD treebank analysis"},
+            {id: "phonological", name: "Phonological Distance", description: "Sound change patterns (ASJP)"},
+            {id: "cognate", name: "Cognate Distance", description: "Historical relatedness (CLDF)"}
+        ];
+
+        const DEFAULT_LANGUAGE_PAIRS = [
+            "Ancient Greek → Modern Greek",
+            "Latin → Italian",
+            "Latin → Spanish", 
+            "Latin → French",
+            "Latin → Romanian",
+            "Old Church Slavonic → Bulgarian",
+            "Old Church Slavonic → Russian",
+            "Old Church Slavonic → Serbian", 
+            "Gothic → German",
+            "Old Church Slavonic → Czech",
+            "Sanskrit → Hindi"
+        ];
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDimensions();
+            loadLanguagePairs();
+            checkBackendConnection();
+            updateStatus();
+        });
+
+        // Load dimensions
+        function loadDimensions() {
+            const container = document.getElementById('dimensions-container');
+            container.innerHTML = '';
+            
+            DEFAULT_DIMENSIONS.forEach(dim => {
+                const dimElement = document.createElement('div');
+                dimElement.className = 'dimension';
+                dimElement.onclick = () => toggleDimension(dim.id);
+                dimElement.innerHTML = `
+                    <h3>${dim.name}</h3>
+                    <p>${dim.description}</p>
+                `;
+                container.appendChild(dimElement);
+            });
+        }
+
+        // Load language pairs
+        function loadLanguagePairs() {
+            const container = document.getElementById('language-pairs-container');
+            container.innerHTML = '';
+            
+            DEFAULT_LANGUAGE_PAIRS.forEach(pair => {
+                const pairElement = document.createElement('div');
+                pairElement.className = 'language-pair';
+                pairElement.innerHTML = `
+                    <input type="checkbox" onchange="togglePair('${pair}')" checked>
+                    <span>${pair}</span>
+                `;
+                container.appendChild(pairElement);
+            });
+            
+            selectedPairs = [...DEFAULT_LANGUAGE_PAIRS];
+            updateStatus();
+        }
+
+        // Toggle dimension selection
+        function toggleDimension(dimId) {
+            const index = selectedDimensions.indexOf(dimId);
+            if (index > -1) {
+                selectedDimensions.splice(index, 1);
+            } else {
+                selectedDimensions.push(dimId);
+            }
+            
+            updateDimensionSelection();
+            updateStatus();
+        }
+
+        // Update dimension visual selection
+        function updateDimensionSelection() {
+            const dimensions = document.querySelectorAll('.dimension');
+            dimensions.forEach((dim, index) => {
+                const dimId = DEFAULT_DIMENSIONS[index].id;
+                if (selectedDimensions.includes(dimId)) {
+                    dim.classList.add('selected');
+                } else {
+                    dim.classList.remove('selected');
+                }
+            });
+        }
+
+        // Toggle language pair
+        function togglePair(pair) {
+            const index = selectedPairs.indexOf(pair);
+            if (index > -1) {
+                selectedPairs.splice(index, 1);
+            } else {
+                selectedPairs.push(pair);
+            }
+            updateStatus();
+        }
+
+        // Select all dimensions
+        function selectAllDimensions() {
+            selectedDimensions = DEFAULT_DIMENSIONS.map(d => d.id);
+            updateDimensionSelection();
+            updateStatus();
+        }
+
+        // Clear dimensions
+        function clearDimensions() {
+            selectedDimensions = [];
+            updateDimensionSelection();
+            updateStatus();
+        }
+
+        // Select all pairs
+        function selectAllPairs() {
+            selectedPairs = [...DEFAULT_LANGUAGE_PAIRS];
+            const checkboxes = document.querySelectorAll('.language-pair input[type="checkbox"]');
+            checkboxes.forEach(cb => cb.checked = true);
+            updateStatus();
+        }
+
+        // Clear pairs
+        function clearPairs() {
+            selectedPairs = [];
+            const checkboxes = document.querySelectorAll('.language-pair input[type="checkbox"]');
+            checkboxes.forEach(cb => cb.checked = false);
+            updateStatus();
+        }
+
+        // Update status display
+        function updateStatus() {
+            document.getElementById('selected-dims').textContent = selectedDimensions.length;
+            document.getElementById('selected-pairs').textContent = selectedPairs.length;
+            
+            const analyzeBtn = document.getElementById('analyze-btn');
+            analyzeBtn.disabled = !isInitialized || selectedDimensions.length === 0;
+        }
+
+        // Check backend connection
+        async function checkBackendConnection() {
+            try {
+                const response = await fetch(`${API_BASE}/health`, {
+                    method: 'GET',
+                    signal: AbortSignal.timeout(5000)
+                });
+                
+                if (response.ok) {
+                    backendConnected = true;
+                    document.getElementById('connection-status').className = 'status status-connected';
+                    document.getElementById('connection-status').textContent = 'Backend connected';
+                    showAlert('Backend connected successfully', 'success');
+                } else {
+                    throw new Error('Backend not responding');
+                }
+            } catch (error) {
+                backendConnected = false;
+                document.getElementById('connection-status').className = 'status status-disconnected';
+                document.getElementById('connection-status').textContent = 'Backend disconnected (using offline mode)';
+                showAlert('Backend not available - interface works in offline mode', 'info');
+            }
+        }
+
+        // Show alert
+        function showAlert(message, type) {
+            const alertsContainer = document.getElementById('alerts');
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            alertsContainer.appendChild(alert);
+            
+            setTimeout(() => {
+                if (alert.parentNode) {
+                    alert.parentNode.removeChild(alert);
+                }
+            }, 8000);
+        }
+
+        // API call helper with extended timeout
+        async function apiCall(endpoint, options = {}) {
+            if (!backendConnected) {
+                throw new Error('Backend not available');
+            }
+            
+            const response = await fetch(`${API_BASE}${endpoint}`, {
+                headers: { 'Content-Type': 'application/json' },
+                signal: AbortSignal.timeout(600000), // 10 minute timeout
+                ...options
+            });
+            
+            if (!response.ok) {
+                const error = await response.json().catch(() => ({ message: `HTTP ${response.status}` }));
+                throw new Error(error.message || `HTTP ${response.status}`);
+            }
+            
+            return await response.json();
+        }
+
+        // Initialize analyzer
+        async function initializeAnalyzer() {
+            if (!backendConnected) {
+                showAlert('Backend not available - cannot initialize analyzer', 'error');
+                return;
+            }
+            
+            const btn = document.getElementById('init-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading"></span>Initializing...';
+            
+            try {
+                await apiCall('/initialize', {
+                    method: 'POST',
+                    body: JSON.stringify({})
+                });
+                
+                isInitialized = true;
+                document.getElementById('analysis-status').textContent = 'Initialized';
+                showAlert('Analyzer initialized successfully', 'success');
+                btn.innerHTML = 'Analyzer Ready';
+                updateStatus();
+            } catch (error) {
+                showAlert(`Initialization failed: ${error.message}`, 'error');
+                btn.innerHTML = 'Initialize Analyzer';
+                btn.disabled = false;
+            }
+        }
+
+        // Update progress
+        function updateProgress(percentage, text, logMessage) {
+            const progressSection = document.getElementById('progress-section');
+            const progressFill = document.getElementById('progress-fill');
+            const progressText = document.getElementById('progress-text');
+            const logContainer = document.getElementById('analysis-log');
+            
+            progressSection.classList.add('show');
+            progressFill.style.width = `${percentage}%`;
+            progressText.textContent = text;
+            
+            if (logMessage) {
+                logContainer.innerHTML += `<div>${new Date().toLocaleTimeString()}: ${logMessage}</div>`;
+                logContainer.scrollTop = logContainer.scrollHeight;
+            }
+        }
+
+        // Run analysis with progress tracking
+        async function runAnalysis() {
+            if (!isInitialized) {
+                showAlert('Please initialize analyzer first', 'error');
+                return;
+            }
+            
+            if (selectedDimensions.length === 0) {
+                showAlert('Please select at least one dimension', 'error');
+                return;
+            }
+            
+            const btn = document.getElementById('analyze-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading"></span>Analyzing...';
+            document.getElementById('analysis-status').textContent = 'Running...';
+            
+            // Reset progress
+            updateProgress(0, 'Starting analysis...', 'Analysis initiated');
+            
+            try {
+                updateProgress(10, 'Sending request to backend...', 'Preparing analysis request');
+                
+                const response = await apiCall('/analyze', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        dimensions: selectedDimensions,
+                        pairs: selectedPairs
+                    })
+                });
+                
+                updateProgress(90, 'Processing results...', 'Analysis completed, processing results');
+                
+                analysisResults = response.results;
+                displayResults();
+                document.getElementById('analysis-status').textContent = 'Completed';
+                document.getElementById('visualize-btn').disabled = false;
+                document.getElementById('export-btn').disabled = false;
+                
+                updateProgress(100, 'Analysis complete!', `Analysis completed for ${selectedDimensions.length} dimensions`);
+                showAlert(`Analysis completed successfully for ${selectedDimensions.length} dimensions`, 'success');
+                
+            } catch (error) {
+                updateProgress(0, 'Analysis failed', `Error: ${error.message}`);
+                showAlert(`Analysis failed: ${error.message}`, 'error');
+                document.getElementById('analysis-status').textContent = 'Failed';
+            } finally {
+                btn.innerHTML = 'Run Analysis';
+                btn.disabled = false;
+            }
+        }
+
+        // Display results
+// Display results - FIXED to handle backend data correctly
+        function displayResults() {
+            if (!analysisResults) return;
+            
+            const resultsSection = document.getElementById('results-section');
+            const resultsContent = document.getElementById('results-content');
+            
+            if (analysisResults.combined) {
+                let html = '<table class="results-table"><thead><tr>';
+                html += '<th>Language Pair</th><th>Family</th><th>Combined Distance</th>';
+                selectedDimensions.forEach(dim => {
+                    const dimName = DEFAULT_DIMENSIONS.find(d => d.id === dim)?.name || dim;
+                    html += `<th>${dimName}</th>`;
+                });
+                html += '</tr></thead><tbody>';
+                
+                Object.entries(analysisResults.combined).forEach(([pairName, data]) => {
+                    const combinedValue = data.seven_dimensional_combined;
+                    const combinedDisplay = (combinedValue !== null && combinedValue !== undefined) ? combinedValue.toFixed(4) : 'N/A';
+                    html += `<tr><td>${pairName}</td><td>${data.family}</td><td><strong>${combinedDisplay}</strong></td>`;
+                    
+                    selectedDimensions.forEach(dim => {
+                        let key, value;
+                        
+                        // Map dimension IDs to correct backend keys
+                        switch(dim) {
+                            case 'lexical':
+                                key = 'lexical_distance';
+                                break;
+                            case 'wals':
+                                key = 'wals_typological_distance';
+                                break;
+                            case 'grambank':
+                                key = 'grambank_typological_distance';
+                                break;
+                            case 'uriel':
+                                key = 'uriel_featural_distance';
+                                break;
+                            case 'syntactic':
+                                key = 'syntactic_distance';
+                                break;
+                            case 'phonological':
+                                key = 'phonological_distance';
+                                break;
+                            case 'cognate':
+                                key = 'cognate_distance';
+                                break;
+                            default:
+                                key = `${dim}_distance`;
+                        }
+                        
+                        value = data[key];
+                        const displayValue = (value !== null && value !== undefined && !isNaN(value)) ? 
+                            parseFloat(value).toFixed(4) : 'N/A';
+                        html += `<td>${displayValue}</td>`;
+                    });
+                    html += '</tr>';
+                });
+                
+                html += '</tbody></table>';
+                resultsContent.innerHTML = html;
+            } else {
+                resultsContent.innerHTML = '<p>No combined results available. Individual dimension results may be available.</p>';
+            }
+            
+            resultsSection.classList.add('show');
+        }
+
+        // Create visualization
+        async function createVisualization() {
+            if (!analysisResults) {
+                showAlert('No results to visualize', 'error');
+                return;
+            }
+            
+            const btn = document.getElementById('visualize-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading"></span>Creating...';
+            
+            try {
+                const response = await apiCall('/visualize', {
+                    method: 'POST',
+                    body: JSON.stringify({ results: analysisResults })
+                });
+                
+                const resultsContent = document.getElementById('results-content');
+                resultsContent.innerHTML += `
+                    <h3>Visualization</h3>
+                    <img src="data:image/png;base64,${response.plot}" alt="Analysis Visualization" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px;">
+                `;
+                
+                showAlert('Visualization created successfully', 'success');
+            } catch (error) {
+                showAlert(`Visualization failed: ${error.message}`, 'error');
+            } finally {
+                btn.innerHTML = 'Create Visualization';
+                btn.disabled = false;
+            }
+        }
+
+        // Export results
+        async function exportResults(format) {
+            if (!analysisResults) {
+                showAlert('No results to export', 'error');
+                return;
+            }
+            
+            const btn = document.getElementById('export-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading"></span>Exporting...';
+            
+            try {
+                const response = await apiCall('/export', {
+                    method: 'POST',
+                    body: JSON.stringify({ results: analysisResults, format })
+                });
+                
+                // Trigger download
+                const link = document.createElement('a');
+                link.href = `${API_BASE}/download/${response.filename}`;
+                link.download = response.filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                showAlert(`Results exported as ${format.toUpperCase()}`, 'success');
+            } catch (error) {
+                showAlert(`Export failed: ${error.message}`, 'error');
+            } finally {
+                btn.innerHTML = 'Export Results';
+                btn.disabled = false;
+            }
+        }
+
+        // Debug files function
+        async function debugFiles() {
+            if (!backendConnected) {
+                showAlert('Backend not available', 'error');
+                return;
+            }
+            
+            try {
+                const response = await apiCall('/debug-files');
+                
+                let debugInfo = 'File availability debug:\n\n';
+                for (const [folder, files] of Object.entries(response)) {
+                    debugInfo += `${folder.toUpperCase()} folder:\n`;
+                    if (Array.isArray(files)) {
+                        files.forEach(file => {
+                            debugInfo += `  - ${file}\n`;
+                        });
+                    } else {
+                        debugInfo += `  ${files}\n`;
+                    }
+                    debugInfo += '\n';
+                }
+                
+                alert(debugInfo);
+            } catch (error) {
+                showAlert(`Debug failed: ${error.message}`, 'error');
+            }
+        }
+    </script>
+</body>
+</html>
