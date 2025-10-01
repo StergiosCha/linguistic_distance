@@ -1652,7 +1652,94 @@ def export_results():
             
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
+@app.route('/api/language-pairs', methods=['GET', 'POST'])
+def manage_language_pairs():
+    """Get or add language pairs"""
+    global global_analyzer
+    
+    if request.method == 'GET':
+        return jsonify({
+            "status": "success",
+            "language_pairs": list(global_analyzer.historical_pairs.keys()),
+            "pairs_data": global_analyzer.historical_pairs
+        })
+    
+    elif request.method == 'POST':
+        data = request.get_json()
+        pair_name = data.get('pair_name')
+        ancient = data.get('ancient')
+        modern = data.get('modern')
+        years = data.get('years')
+        family = data.get('family')
+        
+        if not all([pair_name, ancient, modern, years, family]):
+            return jsonify({"status": "error", "message": "Missing required fields"}), 400
+        
+        global_analyzer.historical_pairs[pair_name] = (ancient, modern, int(years), family)
+        
+        return jsonify({
+            "status": "success", 
+            "message": f"Added language pair: {pair_name}",
+            "total_pairs": len(global_analyzer.historical_pairs)
+        })
 
+@app.route('/api/upload-language-data/<language_name>', methods=['POST'])
+def upload_language_data(language_name):
+    """Upload data files for a specific language"""
+    if 'file' not in request.files:
+        return jsonify({"status": "error", "message": "No file provided"}), 400
+    
+    file = request.files['file']
+    file_type = request.form.get('type')  # swadesh, asjp, treebank, etc.
+    
+    if not file.filename:
+        return jsonify({"status": "error", "message": "No file selected"}), 400
+    
+    # Generate appropriate filename based on type and language
+    if file_type == 'swadesh':
+        filename = f"swadesh_{language_name.replace(' ', '_')}.txt"
+    elif file_type == 'asjp':
+        filename = f"{language_name.replace(' ', '_').lower()}_asjp.txt"
+    elif file_type == 'treebank':
+        # Extract language code for UD naming convention
+        lang_code = language_name.lower()[:3]
+        filename = f"{lang_code}_custom-ud-train.conllu"
+    else:
+        filename = f"{language_name.replace(' ', '_')}_{file_type}.{file.filename.split('.')[-1]}"
+    
+    filepath = os.path.join('data', filename)
+    file.save(filepath)
+    
+    return jsonify({
+        "status": "success",
+        "message": f"Uploaded {file_type} data for {language_name}",
+        "filename": filename
+    })
+
+@app.route('/api/check-language-data/<language_name>')
+def check_language_data(language_name):
+    """Check what data files are available for a language"""
+    data_status = {}
+    
+    # Check for Swadesh list
+    swadesh_file = f"data/swadesh_{language_name.replace(' ', '_')}.txt"
+    data_status['swadesh'] = os.path.exists(swadesh_file)
+    
+    # Check for ASJP data
+    asjp_file = f"data/{language_name.replace(' ', '_').lower()}_asjp.txt"
+    data_status['asjp'] = os.path.exists(asjp_file)
+    
+    # Check for treebank data
+    lang_code = language_name.lower()[:3]
+    treebank_file = f"data/{lang_code}_custom-ud-train.conllu"
+    data_status['treebank'] = os.path.exists(treebank_file)
+    
+    return jsonify({
+        "status": "success",
+        "language": language_name,
+        "available_data": data_status,
+        "completeness": sum(data_status.values()) / len(data_status)
+    })
 @app.route('/api/download/<filename>')
 def download_file(filename):
     """Download exported files"""
