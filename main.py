@@ -1581,6 +1581,15 @@ def create_visualizations():
         print(f"Visualization error: {traceback.format_exc()}")
         return jsonify({"status": "error", "message": str(e)}), 500
 
+# Add this route to serve static files
+@app.route('/<path:filename>')
+def serve_static(filename):
+    """Serve static files like images"""
+    if filename.endswith(('.png', '.jpg', '.jpeg', '.gif', '.ico')):
+        return send_file(filename)
+    return "File not found", 404
+
+
 @app.route('/api/export', methods=['POST'])
 def export_results():
     """Export analysis results to CSV"""
