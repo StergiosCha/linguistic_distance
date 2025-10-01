@@ -1425,7 +1425,9 @@ def debug_files():
             result[name] = "Folder does not exist"
     
     return jsonify(result)
-
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204  # Return empty response for favicon
 @app.route('/api/initialize', methods=['POST'])
 def initialize_analyzer():
     """Initialize the analyzer with configuration"""
