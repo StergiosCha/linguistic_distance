@@ -1491,46 +1491,46 @@ def run_analysis():
         
         results = {}
         
-        # Calculate each selected dimension
+        # Calculate each selected dimension with selected pairs
         if 'lexical' in selected_dimensions:
             print("Calculating lexical distances...")
-            results['lexical'] = global_analyzer.calculate_lexical_distances()
+            results['lexical'] = global_analyzer.calculate_lexical_distances(language_pairs)
             gc.collect()
         
         if 'wals' in selected_dimensions:
             print("Calculating WALS typological distances...")
-            results['wals'] = global_analyzer.calculate_typological_distances("sane_wals.xlsx")
+            results['wals'] = global_analyzer.calculate_typological_distances("sane_wals.xlsx", language_pairs)
             gc.collect()
         
         if 'grambank' in selected_dimensions:
             print("Calculating Grambank distances...")
             if global_analyzer.grambank_analyzer.load_grambank_sane_data("grambank_sane_format.csv"):
-                results['grambank'] = global_analyzer.grambank_analyzer.calculate_grambank_distances(global_analyzer.historical_pairs)
+                results['grambank'] = global_analyzer.grambank_analyzer.calculate_grambank_distances(global_analyzer.historical_pairs, language_pairs)
             else:
                 results['grambank'] = {}
             gc.collect()
         
         if 'uriel' in selected_dimensions and URIEL_AVAILABLE:
             print("Calculating URIEL distances...")
-            results['uriel'] = global_analyzer.uriel_analyzer.calculate_uriel_distances(global_analyzer.historical_pairs)
+            results['uriel'] = global_analyzer.uriel_analyzer.calculate_uriel_distances(global_analyzer.historical_pairs, language_pairs)
             gc.collect()
         else:
             results['uriel'] = {}
         
         if 'syntactic' in selected_dimensions:
             print("Calculating syntactic distances...")
-            results['syntactic'] = global_analyzer.calculate_improved_syntactic_distances()
+            results['syntactic'] = global_analyzer.calculate_improved_syntactic_distances(language_pairs)
             gc.collect()
         
         if 'phonological' in selected_dimensions:
             print("Calculating phonological distances...")
-            results['phonological'] = global_analyzer.phonological_analyzer.calculate_phonological_distances(global_analyzer.historical_pairs)
+            results['phonological'] = global_analyzer.phonological_analyzer.calculate_phonological_distances(global_analyzer.historical_pairs, language_pairs)
             gc.collect()
         
         if 'cognate' in selected_dimensions and global_analyzer.cognate_analyzer:
             print("Calculating cognate distances...")
             if global_analyzer.cognate_analyzer.load_cldf_data():
-                results['cognate'] = global_analyzer.cognate_analyzer.calculate_cognate_distances(global_analyzer.historical_pairs)
+                results['cognate'] = global_analyzer.cognate_analyzer.calculate_cognate_distances(global_analyzer.historical_pairs, language_pairs)
             else:
                 results['cognate'] = {}
             gc.collect()
