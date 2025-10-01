@@ -336,19 +336,24 @@ class GrambankTypologicalAnalyzer:
             print(f"  ✗ Error calculating Grambank distance for {lang1}-{lang2}: {e}")
             return None
 
-    def calculate_grambank_distances(self, historical_pairs):
-        """Calculate Grambank distances for all language pairs"""
+    def calculate_grambank_distances(self, historical_pairs, selected_pairs=None):
+        """Calculate Grambank distances for selected language pairs"""
         
         if self.grambank_data is None:
             print("✗ Grambank data not loaded")
             return {}
         
         grambank_results = {}
+        pairs_to_process = selected_pairs or historical_pairs.keys()
         
         print("\nCALCULATING GRAMBANK TYPOLOGICAL DISTANCES")
         print("=" * 60)
         
-        for pair_name, (ancient, modern, years, family) in historical_pairs.items():
+        for pair_name in pairs_to_process:
+            if pair_name not in historical_pairs:
+                continue
+                
+            ancient, modern, years, family = historical_pairs[pair_name]
             print(f"Processing {pair_name}...")
             
             distance = self.calculate_grambank_distance(ancient, modern)
@@ -695,18 +700,23 @@ class URIELTypologicalAnalyzer:
             print(f"  Error calculating URIEL+ distance for {lang1}-{lang2}: {e}")
             return None
     
-    def calculate_uriel_distances(self, historical_pairs):
-        """Calculate URIEL+ distances for all language pairs with robust error handling"""
+    def calculate_uriel_distances(self, historical_pairs, selected_pairs=None):
+        """Calculate URIEL+ distances for selected language pairs"""
         if not URIEL_AVAILABLE:
             print("\n⚠ URIEL+ ANALYSIS SKIPPED (urielplus not available)")
             return {}
             
         uriel_results = {}
+        pairs_to_process = selected_pairs or historical_pairs.keys()
         
         print("\nCALCULATING URIEL+ FEATURAL DISTANCES")
         print("=" * 50)
         
-        for pair_name, (ancient, modern, years, family) in historical_pairs.items():
+        for pair_name in pairs_to_process:
+            if pair_name not in historical_pairs:
+                continue
+                
+            ancient, modern, years, family = historical_pairs[pair_name]
             print(f"Processing {pair_name}...")
             
             try:
@@ -725,7 +735,6 @@ class URIELTypologicalAnalyzer:
                 continue
         
         return uriel_results
-
 class ASJPPhonologicalAnalyzer:
     def __init__(self):
         """ASJP phonological distance analyzer"""
@@ -867,15 +876,20 @@ class ASJPPhonologicalAnalyzer:
         
         return None
 
-    def calculate_phonological_distances(self, historical_pairs):
-        """Calculate phonological distances for all language pairs"""
+    def calculate_phonological_distances(self, historical_pairs, selected_pairs=None):
+        """Calculate phonological distances for selected language pairs"""
         
         phonological_results = {}
+        pairs_to_process = selected_pairs or historical_pairs.keys()
         
         print("\nCALCULATING PHONOLOGICAL DISTANCES (ASJP)")
         print("=" * 50)
         
-        for pair_name, (ancient, modern, years, family) in historical_pairs.items():
+        for pair_name in pairs_to_process:
+            if pair_name not in historical_pairs:
+                continue
+                
+            ancient, modern, years, family = historical_pairs[pair_name]
             print(f"Processing {pair_name}...")
             
             distance = self.calculate_asjp_distance(ancient, modern)
@@ -887,7 +901,6 @@ class ASJPPhonologicalAnalyzer:
                 print(f"✗ {pair_name}: ASJP data files not found")
         
         return phonological_results
-
 class EnhancedSevenDimensionalTreebankAnalyzer:
     def __init__(self, cldf_path=None):
         """Enhanced seven-dimensional linguistic change analyzer"""
@@ -957,8 +970,7 @@ class EnhancedSevenDimensionalTreebankAnalyzer:
                     )
         
         return dp[len1][len2] / max(len1, len2)
-
-    def calculate_lexical_distances(self):
+    def calculate_lexical_distances(self, selected_pairs=None):
         """Calculate lexical distances from Swadesh lists"""
         
         swadesh_files = {
@@ -981,11 +993,17 @@ class EnhancedSevenDimensionalTreebankAnalyzer:
         }
         
         lexical_results = {}
+        pairs_to_process = selected_pairs or self.historical_pairs.keys()
         
         print("CALCULATING LEXICAL DISTANCES")
         print("=" * 60)
         
-        for pair_name, (ancient, modern, years, family) in self.historical_pairs.items():
+        for pair_name in pairs_to_process:
+            if pair_name not in self.historical_pairs:
+                continue
+                
+            ancient, modern, years, family = self.historical_pairs[pair_name]
+            
             if ancient not in swadesh_files or modern not in swadesh_files:
                 print(f"✗ {pair_name}: Missing Swadesh files")
                 continue
@@ -1028,10 +1046,7 @@ class EnhancedSevenDimensionalTreebankAnalyzer:
                 print(f"✓ {pair_name}: {avg_distance:.4f} ({len(clean_pairs)}/{total_concepts} concepts, {clean_percentage:.1f}% usable)")
         
         return lexical_results
-
-# Replace the calculate_typological_distances method in your main analyzer class:
-
-    def calculate_typological_distances(self, excel_file):
+    def calculate_typological_distances(self, excel_file, selected_pairs=None):
         """Calculate typological distances from WALS"""
         
         # Try multiple possible paths like the Grambank loader
@@ -1088,11 +1103,16 @@ class EnhancedSevenDimensionalTreebankAnalyzer:
         }
         
         typological_results = {}
+        pairs_to_process = selected_pairs or self.historical_pairs.keys()
         
         print("\nCALCULATING TYPOLOGICAL DISTANCES (WALS)")
         print("=" * 50)
         
-        for pair_name, (ancient, modern, years, family) in self.historical_pairs.items():
+        for pair_name in pairs_to_process:
+            if pair_name not in self.historical_pairs:
+                continue
+                
+            ancient, modern, years, family = self.historical_pairs[pair_name]
             ancient_wals = wals_mapping.get(ancient)
             modern_wals = wals_mapping.get(modern)
             
@@ -1121,7 +1141,6 @@ class EnhancedSevenDimensionalTreebankAnalyzer:
             print(f"✓ {pair_name}: {hamming_distance:.4f}")
         
         return typological_results
-
     def parse_conllu_file(self, filepath, max_sentences=5000):
         """Parse CoNLL-U treebank file"""
         # Use direct path like the working file
