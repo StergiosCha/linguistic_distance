@@ -837,12 +837,37 @@
             resultsSection.classList.add('show');
         }
 
-        // Create visualization
-        async function createVisualization() {
-            if (!analysisResults) {
-                showAlert('No results to visualize', 'error');
-                return;
-            }
+// Create visualization
+    async function createVisualization() {
+        if (!analysisResults) {
+            showAlert('No results to visualize', 'error');
+            return;
+        }
+        
+        const btn = document.getElementById('visualize-btn');
+        btn.disabled = true;
+        btn.innerHTML = '<span class="loading"></span>Creating...';
+        
+        try {
+            const response = await apiCall('/visualize', {
+                method: 'POST',
+                body: JSON.stringify({ results: analysisResults })
+            });
+            
+            const resultsContent = document.getElementById('results-content');
+            resultsContent.innerHTML += `
+                <h3>Visualization</h3>
+                <img src="data:image/png;base64,${response.plot}" alt="Analysis Visualization" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px;">
+            `;
+            
+            showAlert('Visualization created successfully', 'success');
+        } catch (error) {
+            showAlert(`Visualization failed: ${error.message}`, 'error');
+        } finally {
+            btn.innerHTML = 'Create Visualization';
+            btn.disabled = false;
+        }
+    }
 
 
         function showAddLanguageForm() {
