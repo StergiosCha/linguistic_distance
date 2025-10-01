@@ -1,0 +1,40 @@
+1 I	3h3m //
+2 you	tv3m //
+3 we	v3y3m //
+11 one	ek3h, eka //
+12 two	dv3u, dve //
+18 person	manuS3h, m3nuSy3h //
+19 fish	min3h, m3tsy~3h //
+21 dog	Sva, Sun //
+22 louse	yuka //
+23 tree	vr~ikS3, daru //
+25 leaf	p3tr3m //
+28 skin	tv3k, Tc3rm3 //
+30 blood	rudh~ir3m, r3kt3m, 3sr~ik //
+31 bone	3sth~i //
+34 horn	Sr~iNg3m //
+39 ear	k3rN3h //
+40 eye	netr3m, n3n3m, 3kSi, Tc3kSuh //
+41 nose	nasika //
+43 tooth	d3nt3h, r3d3h //
+44 tongue	Tjihva //
+47 knee	Tj~anu //
+48 hand	h3st3h, panih //
+51 breast	st3n3h //
+53 liver	y3kr~it //
+54 drink	pa //
+57 see	dr~iS, mil //
+58 hear	Sru, ak3rn3y //
+61 die	mr~i //
+66 come	ag3m //
+72 sun	sury3h, r3vih //
+74 star	tara //
+75 water	Tj~3l3m, paniy3m, ap3h, ud3n //
+77 stone	pr3st3r3h, paSan3h, 3Sma //
+82 fire	3gnih, 3n3l3h //
+85 path	p3nth~ah, marg3h //
+86 mountain	p3rv3t3h, girih //
+92 night	n3kt3m, ratrih, kS3p //
+95 full	purn3, pr3purn3 //
+96 new	n3v3, n3vin3 //
+100 name	nam3 //

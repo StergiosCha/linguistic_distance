@@ -1,0 +1,40 @@
+1 I	yas //
+2 you	ti //
+3 we	niE //
+11 one	EdEn //
+12 two	dva //
+18 person	CovEk //
+19 fish	riba //
+21 dog	kuCE, pEs //
+22 louse	voSka //
+23 tree	drvo //
+25 leaf	list //
+28 skin	koZa //
+30 blood	krv //
+31 bone	koska //
+34 horn	rog //
+39 ear	uvo //
+40 eye	oko //
+41 nose	nos //
+43 tooth	zab //
+44 tongue	yazik //
+47 knee	kolEno //
+48 hand	raka //
+51 breast	grada //
+53 liver	jigEr, crn drob //
+54 drink	piE //
+57 see	glEda //
+58 hear	sluSa //
+61 die	umira //
+66 come	doagy~a, doaja //
+72 sun	soncE //
+74 star	cvezda //
+75 water	voda //
+77 stone	kamEn //
+82 fire	ogan //
+85 path	pat //
+86 mountain	planina //
+92 night	noky~, noC //
+95 full	poln //
+96 new	nov //
+100 name	imE //

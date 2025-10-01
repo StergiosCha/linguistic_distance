@@ -1,0 +1,39 @@
+1 I	azu //
+2 you	ti //
+3 we	mi //
+11 one	yedinu //
+12 two	duva //
+18 person	Clovy~eku //
+19 fish	riba //
+21 dog	pisu //
+23 tree	dry~evo, do*bu //
+25 leaf	listu //
+28 skin	koZa //
+30 blood	kruvi //
+31 bone	kosti //
+34 horn	rogu //
+39 ear	uxo //
+40 eye	oko //
+41 nose	nosu //
+43 tooth	zo*bu //
+44 tongue	ye*ziku //
+47 knee	koly~eno //
+48 hand	ro*ka //
+51 breast	susu, susici //
+53 liver	ye*tro //
+54 drink	piyetu //
+57 see	viditu //
+58 hear	sliSitu //
+61 die	miretu, umiretu //
+66 come	pridetu, gre*detu //
+72 sun	slunice //
+74 star	zvy~ezda //
+75 water	voda //
+77 stone	kami //
+82 fire	ogni //
+85 path	po*ti //
+86 mountain	gora //
+92 night	noSti //
+95 full	isplunu //
+96 new	novu //
+100 name	ime* //

@@ -1,0 +1,109 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 1 I	ya //\
+2 you	t3 //\
+3 we	m3 //\
+4 this	Et3 //\
+5 that	to //\
+6 who	kto //\
+7 what	Sto //\
+8 not	ny~e //\
+9 all	vsy~o //\
+11 one	ady~in //\
+12 two	dva //\
+13 big	balSoy //\
+14 long	dlinn3y //\
+15 small	maliny~kiy //\
+16 woman	ZEnSy~Sy~in3 //\
+17 man	muZCy~in3 //\
+18 person	Cy~iLavy~ek //\
+19 fish	r3b3 //\
+20 bird	pty~ic3 //\
+21 dog	sabak3 //\
+22 louse	voS //\
+23 tree	dy~ery~iv3 //\
+24 seed	sy~emy~i //\
+25 leaf	list //\
+26 root	kory~iny~ //\
+27 bark	kara //\
+28 skin	koZ3 //\
+29 flesh	my~as3 //\
+30 blood	krofy~ //\
+31 bone	k3sty~ //\
+32 grease	Z3r //\
+33 egg	y3yco //\
+34 horn	rok //\
+35 tail	xvost //\
+36 feather	py~iro //\
+37 hair	voL3s, voL3s3 //\
+38 head	g3Lava //\
+39 ear	ux3 //\
+40 eye	gLas //\
+41 nose	nos //\
+42 mouth	rot //\
+43 tooth	zup //\
+44 tongue	yaz3k //\
+45 claw	nog3ty~ //\
+46 foot	stupny~a //\
+47 knee	kalen3 //\
+48 hand	kisty~ //\
+49 belly	Z3vot //\
+50 neck	SEy3 //\
+51 breast	ZEnsk3y3 gruty~ //\
+52 heart	sy~erdc3 //\
+53 liver	py~eCy~iny~ //\
+54 drink	py~ity~ //\
+55 eat	y3sty~, kuS3ty~ //\
+56 bite	kusaty~ //\
+57 see	vy~idy~ity~ //\
+58 hear	sL3S3ty~ //\
+59 know	znaty~ //\
+60 sleep	spaty~ //\
+61 die	umy~iry~ety~ //\
+62 kill	uby~ity~ //\
+63 swim	pLav3ty~ //\
+64 fly	litaty~ //\
+65 walk	xady~ity~ //\
+66 come	pry~iyty~i //\
+67 lie	liZaty~ //\
+68 sit	sy~idy~ety~ //\
+69 stand	stayaty~ //\
+70 give	daty~ //\
+71 say	skazaty~ //\
+72 sun	sonc3 //\
+73 moon	Luna //\
+74 star	zvy~izda //\
+75 water	vada //\
+76 rain	d3Zty~ //\
+77 stone	kamy~iny~ //\
+78 sand	py~isok //\
+79 earth	zy~imla //\
+80 cloud	obL3k3 //\
+81 smoke	d3m //\
+82 fire	agony~ //\
+83 ash	zaLa, py~epy~iL //\
+84 burn	gary~ety~ //\
+85 path	trapa //\
+86 mountain	gara //\
+87 red	krasn3y //\
+88 green	zy~ilon3y //\
+89 yellow	ZoLt3y //\
+90 white	by~eL3y //\
+91 black	Cy~orn3y //\
+92 night	noCy~ //\
+93 hot	ty~opL3y //\
+94 cold	xaLodn3y //\
+95 full	poLn3y, napoLny~inn3y //\
+96 new	nov3y //\
+97 good	xaroS3y //\
+98 round	krugL3y //\
+99 dry	suxoy //\
+100 name	y3my~i //\
+}

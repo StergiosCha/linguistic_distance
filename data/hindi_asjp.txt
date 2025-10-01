@@ -1,0 +1,97 @@
+1 I	mai* //
+2 you	tu, ap //
+3 we	ham //
+4 this	yeh, is //
+5 that	voh, us //
+6 who	kaun //
+7 what	ky~a //
+8 not	nahi* //
+9 all	sab, sara //
+10 many	bahut, zy~ada //
+11 one	ek //
+12 two	do //
+13 big	ba //
+14 long	lamba //
+15 small	Co //
+16 woman	aurat, nari //
+17 man	%admi, mard //
+18 person	vy~akti, manuSy~a //
+19 fish	maCli //
+20 bird	pakSi, parinda //
+21 dog	kutta //
+22 louse	ju* //
+23 tree	pe, darxat //
+24 seed	bij //
+25 leaf	patti //
+26 root	ja //
+27 bark	Cal //
+28 skin	tvaCa, Cal //
+29 flesh	ma*s, goSt //
+30 blood	rakt, %xun //
+31 bone	ast //
+32 grease	vasa //
+33 egg	an //
+34 horn	si*g //
+35 tail	pu*S, dum //
+36 feather	pank, par //
+37 hair	bal, keS //
+38 head	sar //
+39 ear	kan //
+40 eye	a*k //
+41 nose	nak //
+42 mouth	mu*h, muk //
+43 tooth	da*t //
+44 tongue	jib, zaba* //
+45 claw	nakun //
+46 foot	pair //
+47 knee	gu //
+48 hand	hat //
+49 belly	pet //
+50 neck	gala, gardan //
+51 breast	stan, Cati //
+52 heart	dil //
+53 liver	jigar, kaleja //
+54 drink	pi //
+55 eat	ka //
+56 bite	ka //
+57 see	dek //
+58 hear	sun //
+59 know	jan //
+60 sleep	so //
+61 die	mar //
+62 kill	mar //
+63 swim	tair //
+65 walk	Cal, ahal //
+66 come	ana //
+67 lie	le //
+68 sit	bai //
+70 give	de //
+71 say	kah //
+72 sun	suraj //
+73 moon	Ca*d //
+74 star	sitara //
+75 water	pani //
+76 rain	bariS //
+77 stone	pattar //
+78 sand	ret, balu //
+79 earth	darti, bumi //
+80 cloud	badal //
+81 smoke	dua* //
+82 fire	ag, agni //
+83 ash	rak //
+84 burn	jal, jala //
+86 mountain	paha //
+87 red	lal //
+88 green	hara //
+89 yellow	pila //
+90 white	safed //
+91 black	kala //
+92 night	ratri //
+93 hot	garam //
+94 cold	sardi //
+95 full	pura //
+96 new	naya //
+97 good	aCCa //
+98 round	gol //
+99 dry	suka //
+100 name	nam //

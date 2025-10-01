@@ -1,0 +1,99 @@
+1 I	exo //
+2 you	si, esi //
+3 we	emis //
+4 this	avto //
+5 that	to //
+6 who	pios //
+7 what	ti //
+8 not	8en //
+9 all	ola //
+11 one	ena //
+12 two	8io //
+13 big	mexalos //
+14 long	makris //
+15 small	mikros //
+16 woman	Sineka //
+17 man	an8ras //
+18 person	an8ropos //
+19 fish	psari //
+20 bird	puli //
+21 dog	sTili, sTilos //
+22 louse	psira //
+23 tree	8endro //
+24 seed	sporos //
+25 leaf	filo //
+26 root	riza //
+27 bark	flu8a //
+28 skin	petsi //
+29 flesh	kreas //
+30 blood	ema //
+31 bone	osto, kokkalo //
+32 grease	paxos //
+33 egg	avxo //
+34 horn	Teras, Terato //
+35 tail	ura //
+36 feather	ftero //
+37 hair	malia //
+38 head	Tefali //
+39 ear	avti //
+40 eye	mati, of8almos //
+41 nose	miti //
+42 mouth	stoma //
+43 tooth	8ondi //
+44 tongue	xlosa //
+45 claw	niSi //
+46 foot	po8i //
+47 knee	xonato //
+48 hand	Seri //
+49 belly	Tilia //
+50 neck	lemos //
+51 breast	sti8os //
+52 heart	kar8ia //
+53 liver	ipar, sikoti //
+54 drink	pino //
+55 eat	tro //
+56 bite	8aNgano //
+57 see	vlepo //
+58 hear	akuo //
+59 know	ksero //
+60 sleep	Timame //
+61 die	pe8eno //
+62 kill	skotono, 8anatono //
+63 swim	kolimbo //
+64 fly	peto //
+65 walk	trexo //
+66 come	erxome //
+67 lie	ime ksaplomenos //
+68 sit	ka8ome //
+69 stand	stekome, ime or8ios //
+70 give	8ino //
+71 say	leo //
+72 sun	ilios //
+73 moon	selini, feNgari //
+74 star	astro, asteri //
+75 water	nero //
+76 rain	vroSi //
+77 stone	petra //
+78 sand	amos //
+79 earth	Si //
+80 cloud	sinnefo //
+81 smoke	kapnos //
+82 fire	fotia //
+83 ash	staxti //
+84 burn	To //
+85 path	monopati //
+86 mountain	oros, vuno //
+87 red	kokTinos //
+88 green	prasinos //
+89 yellow	Titrinos //
+90 white	aspros //
+91 black	mavros, melanos //
+92 night	nixta //
+93 hot	8ermos //
+94 cold	krios, psixros //
+95 full	Sematos //
+96 new	neos, TenurSos //
+97 good	kalos //
+98 round	stroNCilos //
+99 dry	ksiros, stexnos //
+100 name	onoma //

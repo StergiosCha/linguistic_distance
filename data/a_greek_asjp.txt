@@ -1,0 +1,40 @@
+1 I	ego //
+2 you	si //
+3 we	Emeis //
+11 one	heis, mia //
+12 two	dio //
+18 person	anth~ropos, anEr //
+19 fish	ikh~th~is //
+21 dog	kion //
+22 louse	ph~th~eir //
+23 tree	dendron //
+25 leaf	ph~ilon //
+28 skin	kh~ros, derma //
+30 blood	haima //
+31 bone	oston //
+34 horn	keras //
+39 ear	os //
+40 eye	oph~th~almos, oma //
+41 nose	rh~is //
+43 tooth	odos //
+44 tongue	glota, glosa //
+47 knee	goni //
+48 hand	kh~eir //
+51 breast	sternon, stEth~os //
+53 liver	hEpar //
+54 drink	pinein //
+57 see	horan, blepein //
+58 hear	akoein //
+61 die	apoth~nEiskein, teleutan //
+66 come	erkh~esth~ai //
+72 sun	hElios //
+74 star	astEr, astron //
+75 water	hidor //
+77 stone	lith~os, petra //
+82 fire	pir //
+85 path	odos, atrapos //
+86 mountain	oros //
+92 night	niks //
+95 full	pestos, pleos //
+96 new	neos, kainos //
+100 name	onoma, doksa //

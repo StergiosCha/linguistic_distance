@@ -1,0 +1,100 @@
+1 I	yo //
+2 you	ustet, tu //
+3 we	nosotros //
+4 this	este //
+5 that	ese, akely~a //
+6 who	kien //
+7 what	ke //
+8 not	no //
+9 all	todos //
+10 many	muCos //
+11 one	uno //
+12 two	dos //
+13 big	grande //
+14 long	largo //
+15 small	peke5o, Ciko //
+16 woman	muher //
+17 man	ombre //
+18 person	persona //
+19 fish	peskado, pes //
+20 bird	ave, paharo //
+21 dog	pero //
+22 louse	pioho //
+23 tree	arbol, palo //
+24 seed	semiya //
+25 leaf	oha //
+26 root	rais //
+27 bark	kortesa, kaskara //
+28 skin	piel //
+29 flesh	karne //
+30 blood	sangre //
+31 bone	weso //
+32 grease	grasa //
+33 egg	wevo //
+34 horn	kw~erno //
+35 tail	kola, rabo //
+36 feather	pluma //
+37 hair	pelo, kabeyo //
+38 head	kabesa //
+39 ear	oreha //
+40 eye	oho //
+41 nose	naris //
+42 mouth	boka //
+43 tooth	diente //
+44 tongue	lengw~a //
+45 claw	gara //
+46 foot	pie, pata //
+47 knee	rodiya //
+48 hand	mano //
+49 belly	bariga //
+50 neck	kw~eyo, peskw~eso //
+51 breast	peCo, seno //
+52 heart	korason //
+53 liver	igado //
+54 drink	bebe, toma //
+55 eat	kome //
+56 bite	morde //
+57 see	ve //
+58 hear	oir //
+59 know	sabe, konose //
+60 sleep	dormi //
+61 die	mori //
+62 kill	mata //
+63 swim	nada //
+64 fly	vola //
+65 walk	anda, kamina //
+66 come	veni //
+67 lie	akosta, eCa //
+68 sit	senta //
+69 stand	esta de pie //
+70 give	da //
+71 say	desi //
+72 sun	sol //
+73 moon	luna //
+74 star	estreya //
+75 water	agw~a //
+76 rain	yuvia //
+77 stone	piedra //
+78 sand	arena //
+79 earth	tiera //
+80 cloud	nube //
+81 smoke	umo //
+82 fire	fuego //
+83 ash	senisa //
+84 burn	kema, arde //
+85 path	senda //
+86 mountain	sero, monta5a //
+87 red	roho, kolorado //
+88 green	verde //
+89 yellow	amariyo //
+90 white	blanko //
+91 black	negro //
+92 night	noCe //
+93 hot	kaliente //
+94 cold	frio //
+95 full	yeno //
+96 new	nuevo //
+97 good	bw~eno //
+98 round	redondo //
+99 dry	seko //
+100 name	nombre //

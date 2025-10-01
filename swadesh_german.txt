@@ -1,0 +1,85 @@
+ich
+du
+wir
+dies(es)
+jenes
+wer
+was
+nicht
+alle
+viele
+eins
+zwei
+Rinde (bark)
+Fleisch (flesh)
+Blut
+Knochen
+Fett (grease)
+Ei
+Horn
+Schwanz (tail)
+Feder (feather)
+Haar
+Kopf
+Ohr
+Auge
+Nase
+Mund
+Zahn
+Zunge
+Kralle (claw)
+Fuß
+Knie
+Hand
+Bauch (belly)
+Hals (neck)
+Brüste (breasts)
+Herz
+Leber
+trinken
+essen
+beißen
+sehen
+hören
+wissen
+schlafen
+sterben
+töten
+schwimmen
+fliegen
+gehen
+kommen
+liegen
+sitzen
+stehen
+geben
+sagen
+Sonne
+Mond
+Stern
+Wasser
+Regen
+Stein
+Sand
+Erde
+Wolke
+Rauch
+Feuer
+Asche
+brennen
+Pfad (path)
+Berg
+rot
+grün
+gelb
+weiß
+schwarz
+Nacht
+heiß
+kalt
+voll
+neu
+gut
+rund
+trocken
+Name

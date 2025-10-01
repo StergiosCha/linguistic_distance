@@ -1,0 +1,41 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 1 I	ekan //\
+2 you	iuwiz //\
+3 we	wiz //\
+11 one	ainaz //\
+12 two	twai //\
+18 person	wextiz //\
+19 fish	fiskoyanan //\
+21 dog	xun8az //\
+22 louse	hnito //\
+23 tree	trewan //\
+25 leaf	laubhan //\
+30 blood	blo8an //\
+31 bone	bainan //\
+39 ear	auzon //\
+43 tooth	tan8, tun8 //\
+44 tongue	tunxon //\
+47 knee	knewan //\
+48 hand	handuz //\
+51 breast	breustan //\
+53 liver	libhro //\
+54 drink	drinkanan //\
+57 see	sexwanan //\
+58 hear	hauzyanan, hauryanan //\
+66 come	kw~emanan //\
+72 sun	sunon //\
+74 star	sterson, sterno //\
+75 water	watar //\
+77 stone	stainaz //\
+85 path	pa8a //\
+96 new	newyaz //\
+100 name	namon //\
+}

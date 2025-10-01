@@ -1,0 +1,36 @@
+1 I	ik //
+2 you	8u //
+3 we	wis //
+11 one	Ens //
+12 two	tw~E //
+18 person	mana //
+19 fish	fisks //
+21 dog	hunds //
+23 tree	bagms, triu //
+25 leaf	laufs //
+28 skin	fil //
+30 blood	blo8 //
+34 horn	horn //
+39 ear	auso //
+40 eye	auxo //
+43 tooth	tun8us //
+44 tongue	tuNgo //
+47 knee	kniu //
+48 hand	handus //
+51 breast	brusts, barms //
+54 drink	driNkan //
+57 see	sEhw~an //
+58 hear	hausy~an //
+61 die	diwan, dau8nan //
+66 come	kw~iman //
+72 sun	sauil, suno //
+74 star	stErno //
+75 water	wato, ahw~a //
+77 stone	stains, halus //
+82 fire	fon, hauri //
+85 path	staixa, wigs //
+86 mountain	fErguni, bErgs //
+92 night	nats //
+95 full	fuls //
+96 new	niuyis //
+100 name	namo //

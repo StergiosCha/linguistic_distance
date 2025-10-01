@@ -1,0 +1,100 @@
+1 I	ya //
+2 you	ti, vi //
+3 we	mi //
+4 this	ovay, ova //
+5 that	ta, to //
+6 who	ko, tko //
+7 what	Sta, Sto //
+8 not	ne //
+9 all	sve //
+10 many	mnogo, puno //
+11 one	yedan //
+12 two	dva //
+13 big	veliki, golem //
+14 long	dugi //
+15 small	mali //
+16 woman	Zena //
+17 man	Coviyek, muZ //
+18 person	Covek, Coviyek //
+19 fish	riba //
+20 bird	ptica //
+21 dog	pas //
+22 louse	vaS, uS //
+23 tree	drvo //
+24 seed	sy~eme //
+25 leaf	list //
+26 root	koriyen, koren //
+27 bark	kora //
+28 skin	koZa //
+29 flesh	meso //
+30 blood	krv //
+31 bone	kost //
+32 grease	debly~ina, salo //
+33 egg	yaye //
+34 horn	rog //
+35 tail	rep //
+36 feather	pero, perka //
+37 hair	kosa //
+38 head	glava //
+39 ear	uvo, uho //
+40 eye	oko //
+41 nose	nos //
+42 mouth	usta //
+43 tooth	zub //
+44 tongue	yezik //
+45 claw	nokat //
+46 foot	stopa, stopalo //
+47 knee	koly~eno //
+48 hand	ruka, Saka //
+49 belly	stomak, trbuh //
+50 neck	vrat //
+51 breast	grudi, prsa //
+52 heart	srce //
+53 liver	yetra, cigerica //
+54 drink	pi //
+55 eat	yes //
+56 bite	uyes, gris //
+57 see	vidy~e //
+58 hear	sluSa //
+59 know	zna //
+60 sleep	spava //
+61 die	umre, umriye //
+62 kill	ubi //
+63 swim	pliva //
+64 fly	lety~e //
+65 walk	xoda //
+66 come	dolazi //
+67 lie	leZa //
+68 sit	sede, sy~edi //
+69 stand	stoya, staya //
+70 give	da //
+71 say	reTi, govori //
+72 sun	sunce //
+73 moon	my~esec //
+74 star	zvezda, zviyezda //
+75 water	voda //
+76 rain	kiSa //
+77 stone	kamen, stena //
+78 sand	pesak, piyesak //
+79 earth	zemly~a //
+80 cloud	oblak //
+81 smoke	dim //
+82 fire	vatra, ogani //
+83 ash	pepeo //
+84 burn	gore, gory~e //
+85 path	ulica, put //
+86 mountain	planina, gora //
+87 red	crveni //
+88 green	zeleni //
+89 yellow	Zuti //
+90 white	beli, biyeli //
+91 black	crni //
+92 night	nox //
+93 hot	topao //
+94 cold	zima, studen //
+95 full	pun //
+96 new	novi //
+97 good	dobar //
+98 round	okrugao, okrugli //
+99 dry	suv, suh //
+100 name	ime //

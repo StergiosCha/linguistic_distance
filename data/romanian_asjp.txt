@@ -1,0 +1,91 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 1 I	me //\
+2 you	tu //\
+3 we	amen //\
+11 one	yek, yekh~ //\
+12 two	duy //\
+18 person	jeno //\
+19 fish	maCh~o //\
+21 dog	juSh~el, jukel //\
+22 louse	juv //\
+23 tree	kaS //\
+25 leaf	patrin //\
+28 skin	morky~i //\
+30 blood	rat //\
+31 bone	%kokalo //\
+34 horn	Sing~, Sing~oro //\
+39 ear	kan //\
+40 eye	yakh~ //\
+41 nose	nakh~ //\
+43 tooth	dand~ //\
+44 tongue	Ch~ib, Cib //\
+47 knee	Cang~, koC //\
+48 hand	va //\
+51 breast	CuCa, CuCi //\
+53 liver	buSe, jigeri //\
+54 drink	piyel, piyol //\
+57 see	diSh~ol, dikh~el //\
+58 hear	asunol, kand~el //\
+61 die	merel, merol //\
+66 come	avel, resol //\
+72 sun	kh~am //\
+74 star	Cerhen //\
+75 water	pay //\
+77 stone	bar //\
+82 fire	yag //\
+85 path	%drom, prSa //\
+86 mountain	playin //\
+92 night	raSa, rat //\
+95 full	ph~erdino, ph~erdo //\
+96 new	nevo //\
+100 name	alav, lafi //\
+ROMANIAN\{IE.ROMANCE|Indo-European,Italic,Romance,Eastern@Indo-European,ClassicalIndo-European,Italic,Latino-Faliscan,Latinic,ImperialLatin,Romance,EasternRomance,NorthernRomanian,EasternRomanian\}\
+ 1   46.00   25.00    23713290   rom   ron\
+2 you	tu //\
+3 we	noi //\
+11 one	unu //\
+12 two	doi //\
+18 person	persoan3 //\
+19 fish	peSte //\
+21 dog	k3ne //\
+22 louse	p3duke //\
+23 tree	pom, arbore //\
+25 leaf	frunz3 //\
+28 skin	py~ele //\
+30 blood	s3nje //\
+31 bone	os //\
+34 horn	korn //\
+39 ear	ureke //\
+40 eye	oky~ //\
+41 nose	nas //\
+43 tooth	dinte //\
+44 tongue	limb3 //\
+47 knee	jenuNky~ //\
+48 hand	m3n3 //\
+51 breast	py~ept, s3n //\
+53 liver	fikat //\
+54 drink	bea //\
+57 see	vedea //\
+58 hear	auzy~ //\
+61 die	mury~ //\
+66 come	veny~ //\
+72 sun	soare //\
+74 star	stea //\
+75 water	ap3 //\
+77 stone	py~atr3 //\
+82 fire	fok //\
+85 path	k3rare //\
+86 mountain	munte //\
+92 night	noapte //\
+95 full	plin //\
+96 new	nou //\
+100 name	nume //\
+}

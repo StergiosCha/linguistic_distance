@@ -1,0 +1,206 @@
+tu
+el
+noi
+voi
+ei
+acesta
+acela
+aici
+acolo
+cine
+ce
+unde
+când
+cum
+nu
+tot
+mulți
+niște
+puțin
+alt
+unu
+doi
+trei
+patru
+cinci
+mare
+lung
+larg
+gros
+greu
+mic
+scurt
+strâmt
+subțire, slab
+femeie, muiere
+bărbat
+om
+copil
+soție
+soț
+mamă
+tată
+animal
+pește
+pasăre
+câine
+păduche
+șarpe
+vierme
+arbore, copac
+pădure
+băț
+fruct
+sămânță
+frunză
+rădăcină
+scoarță
+floare
+iarbă
+sfoară, frânghie, coardă
+piele
+carne
+sânge
+os
+grăsime
+ou
+corn
+coadă
+pană, fulg
+păr
+cap
+ureche
+ochi
+nas
+gură
+dinte
+limbă
+unghie
+laba piciorului
+picior
+genunchi
+mână
+aripă
+burtă, vintre, foale, pântece
+măruntaie
+gât
+spate
+piept
+inimă
+ficat, mai
+a bea
+a mânca
+a mușca
+a suge
+a scuipa
+a borî, a vomita, a vărsa
+a sufla
+a răsufla, a respira
+a râde
+a vedea
+a auzi
+a ști
+a cugeta, a se gândi
+a mirosi
+a se teme
+a dormi
+a trăi
+a muri
+a ucide, a omorî
+a lupta
+a vâna
+a lovi
+a tăia
+a despica, a spinteca
+a înjunghia
+a zgâria
+a săpa, a excava
+a înota
+a zbura
+a merge
+a veni
+a zace
+a se așeza (action), a ședea (state)
+a se scula în picioare (action), a sta (state)
+a se întoarce
+a cădea
+a da
+a ține
+a strânge
+a freca
+a spăla
+a șterge
+a trage
+a împinge
+a arunca
+a lega
+a coase
+a număra
+a zice, a spune
+a cânta
+a juca
+a pluti
+a curge
+a îngheța
+a se umfla
+soare
+lună
+stea
+apă
+ploaie, udătură
+râu
+lac
+mare
+sare
+piatră
+nisip
+praf, pulbere
+pământ
+nor
+ceață
+cer
+vânt
+zăpadă, nea
+gheață, sloi
+fum
+foc, jar
+cenușă, scrum
+a arde
+drum, cale
+munte
+roșu
+verde
+galben
+alb
+negru, lai
+noapte
+zi
+an
+cald
+rece, frig
+plin
+nou
+vechi
+bun
+rău, prost
+putred, cariat
+murdar, jegos
+drept
+rotund
+ascuțit
+tocit, bont
+neted
+ud, umed
+uscat
+drept
+lângă, apropiat, aproape
+departe
+drept
+stâng
+la, în
+în
+cu
+și
+dacă
+deoarece, pentru că
+nume
