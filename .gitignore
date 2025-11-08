@@ -14,11 +14,27 @@ nosetests.xml
 coverage.xml
 *.cover
 *.log
-.git
 .mypy_cache
 .pytest_cache
 .hypothesis
 .DS_Store
 Thumbs.db
+
+# Uploads and results
 uploads/
 results/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# Data files (optional - uncomment if you want to exclude large datasets)
+# *.conllu
+# *.xlsx
+# *.csv
