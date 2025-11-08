@@ -319,9 +319,7 @@ MIT License - see LICENSE file for details
 
 ## Funding
 
-This project is funded by the **European Union** under the **ERC Advanced Grant (ADG)**:
-
-**PhylProGramm** - Grant Agreement No. 101096554
+This project is funded by the European Union (ERC ADG, PhylProGramm, 101096554). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.
 
 ## Contact
 
