@@ -317,6 +317,12 @@ Contributions welcome! Areas for expansion:
 
 MIT License - see LICENSE file for details
 
+## Funding
+
+This project is funded by the **European Union** under the **ERC Advanced Grant (ADG)**:
+
+**PhylProGramm** - Grant Agreement No. 101096554
+
 ## Contact
 
 **Stergios Chatzikyriakidis**  
